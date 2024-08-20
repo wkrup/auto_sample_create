@@ -54,13 +54,15 @@ def open_preset_play(that_folder_path):
     
         # play notes
         curr_vital_name = preset_list[i].split(".")[0]
-        start_recording(curr_vital_name + ".wav") #start recording
-        note_list = ['a','s','d', 'f', 'g', 'h', 'j', 'k']
 
+        record_process = start_recording(curr_vital_name + ".wav") #start recording
+
+        note_list = ['a','s','d', 'f', 'g', 'h', 'j', 'k']
         for j in note_list:
             play_note(j)
 
-
+        stop_recording(record_process)
+        
         if i != len(preset_list)-1:
             file_menu_x, file_menu_y = 901, 94
             open_menu_x, open_menu_y = 901, 154
