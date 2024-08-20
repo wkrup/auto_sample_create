@@ -60,7 +60,6 @@ def open_preset_play(that_folder_path):
         for j in note_list:
             play_note(j)
 
-        stop_recording() #stop recording
 
         if i != len(preset_list)-1:
             file_menu_x, file_menu_y = 901, 94

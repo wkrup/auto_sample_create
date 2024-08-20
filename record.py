@@ -5,22 +5,25 @@ import os
 
 
 def start_recording(output_file):
-    monitor_source = "auto_null.monitor"  # Replace with your monitor source name
+    # Define the output file and duration
+    duration = 1  # Duration in seconds
+
+    # Define the monitor source name (replace with your specific monitor name)
+    monitor_source = "auto_null.monitor"  # Example monitor source name
+
+    # Create the ffmpeg command
     command = [
         "ffmpeg",
         "-f", "pulse",
         "-i", monitor_source,
+        "-t", str(duration),
         output_file
     ]
 
-    process = subprocess.Popen(command)
-    return process
-
-def stop_recording(process):
-    # Send a SIGINT signal to gracefully stop ffmpeg
-    process.send_signal(signal.SIGINT)
-    process.wait()  # Wait for the process to terminate
-    print("Recording stopped.")
+    # Run the command
+    print("Recording started...")
+    subprocess.run(command)
+    print("Recording finished.")
 
 
 
