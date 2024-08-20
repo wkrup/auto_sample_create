@@ -1,12 +1,11 @@
 import pyautogui 
 import time
 import os
+from record import *
 
 
-# file_path = "run_auto/auto_sample_create/Pluck_CTGAN_synthesizer/AIU_Preset_4.vital"
-
-folder_path = "run_auto/auto_sample_create/Pluck_CTGAN_synthesizer"
-folder_path_rel = 'Pluck_CTGAN_synthesizer'
+folder_path = "run_auto/auto_sample_create/vital_files"
+folder_path_rel = 'vital_files' #zip file name without zip
 
 def play_note(note_key):
     with pyautogui.hold(note_key):
@@ -37,7 +36,6 @@ def preset_move(that_file_path):
     that_file_path_list = that_file_path.split("/")
  
 
-    # time.sleep(0.5)
     for i in that_file_path_list:
         pyautogui.write(i)
         time.sleep(0.5)
@@ -55,10 +53,14 @@ def open_preset_play(that_folder_path):
         time.sleep(0.3)    
     
         # play notes
+        curr_vital_name = preset_list[i].split(".")[0]
+        start_recording(curr_vital_name + ".wav") #start recording
         note_list = ['a','s','d', 'f', 'g', 'h', 'j', 'k']
 
         for j in note_list:
             play_note(j)
+
+        stop_recording() #stop recording
 
         if i != len(preset_list)-1:
             file_menu_x, file_menu_y = 901, 94
@@ -82,10 +84,12 @@ def close_vital():
 
 
 if __name__ == '__main__':
+    os.system('unzip -j ' + folder_path_rel +".zip -d " + folder_path_rel)
     open_vital()
     preset_move(folder_path)
     open_preset_play(folder_path_rel)
     close_vital()
+    os.system("rm -r " + folder_path_rel)
 
 
     # print(pyautogui.position())

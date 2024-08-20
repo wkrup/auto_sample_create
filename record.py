@@ -4,7 +4,7 @@ import signal
 import os
 
 
-def start_recording(output_file="output.wav"):
+def start_recording(output_file):
     monitor_source = "auto_null.monitor"  # Replace with your monitor source name
     command = [
         "ffmpeg",
@@ -12,6 +12,9 @@ def start_recording(output_file="output.wav"):
         "-i", monitor_source,
         output_file
     ]
+
+    process = subprocess.Popen(command)
+    return process
 
 def stop_recording(process):
     # Send a SIGINT signal to gracefully stop ffmpeg
