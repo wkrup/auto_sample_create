@@ -4,7 +4,7 @@ import signal
 import os
 
 def start_recording(output_file):
-    monitor_source = "alsa_output.pci-0000_00_1b.0.analog-stereo.monitor"  # Replace with your monitor source name
+    monitor_source = "auto_null.monitor"  # Replace with your monitor source name
     command = [
         "ffmpeg",
         "-f", "pulse",

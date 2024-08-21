@@ -4,8 +4,10 @@ import os
 from record import *
 
 
-folder_path = "run_auto/auto_sample_create/vital_files"
-folder_path_rel = 'vital_files' #zip file name without zip
+folder_path = "run_auto/auto_sample_create/vital_files" #change path
+folder_path_rel = 'vital_files' #zip file name without zip #fixed
+audio_save_folder = 'sample_audio'
+
 
 def play_note(note_key):
     with pyautogui.hold(note_key):
@@ -13,7 +15,7 @@ def play_note(note_key):
 
 def open_vital():
     pyautogui.hotkey('alt', 'f2')  # 'super' key often corresponds to the Windows key or Command key
-    time.sleep(1)
+    time.sleep(2)
     pyautogui.write('Vital')  # Replace with the application you want to open
     # Press Enter to launch the application
     pyautogui.press('enter')
@@ -55,7 +57,7 @@ def open_preset_play(that_folder_path):
         # play notes
         curr_vital_name = preset_list[i].split(".")[0]
 
-        record_process = start_recording(curr_vital_name + ".wav") #start recording
+        record_process = start_recording(audio_save_folder + "/" + curr_vital_name + ".wav") #start recording
 
         note_list = ['a','s','d', 'f', 'g', 'h', 'j', 'k']
         for j in note_list:
@@ -91,6 +93,8 @@ if __name__ == '__main__':
     open_preset_play(folder_path_rel)
     close_vital()
     os.system("rm -r " + folder_path_rel)
+    os.system("zip sample_audio.zip sample_audio/")
+    # os.system("rm -rf sample_audio/*")
 
 
     # print(pyautogui.position())
