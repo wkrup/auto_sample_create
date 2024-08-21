@@ -87,14 +87,16 @@ def close_vital():
 
 
 if __name__ == '__main__':
+    if not os.path.exists(audio_save_folder):
+        os.makedirs(audio_save_folder)
     os.system('unzip -j ' + folder_path_rel +".zip -d " + folder_path_rel)
     open_vital()
     preset_move(folder_path)
     open_preset_play(folder_path_rel)
     close_vital()
     os.system("rm -r " + folder_path_rel)
-    os.system("zip sample_audio.zip sample_audio/")
-    # os.system("rm -rf sample_audio/*")
+    os.system("zip -r sample_audio.zip sample_audio/")
+    os.system("rm -rf sample_audio/*")
 
 
     # print(pyautogui.position())
