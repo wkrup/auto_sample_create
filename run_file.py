@@ -4,7 +4,7 @@ import os
 from record import *
 
 
-folder_path = "run_auto/auto_sample_create/vital_files" #change path
+folder_path = "auto_sample_create/vital_files" #change path
 folder_path_rel = 'vital_files' #zip file name without zip #fixed
 audio_save_folder = 'sample_audio'
 
@@ -87,9 +87,8 @@ def close_vital():
 
 
 if __name__ == '__main__':
-    if not os.path.exists(audio_save_folder):
-        os.makedirs(audio_save_folder)
-    os.system('unzip -j ' + folder_path_rel +".zip -d " + folder_path_rel)
+    vital_zip = os.listdir(folder_path_rel)[0]
+    os.system('unzip -j ' + folder_path_rel + "/" + vital_zip +" -d " + folder_path_rel)
     open_vital()
     preset_move(folder_path)
     open_preset_play(folder_path_rel)
