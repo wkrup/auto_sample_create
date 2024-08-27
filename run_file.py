@@ -26,14 +26,15 @@ def preset_move(that_file_path):
     file_menu_x, file_menu_y = 901, 94
     open_menu_x, open_menu_y = 901, 154
     ## open preset file
-    pyautogui.moveTo(file_menu_x, file_menu_y, duration=0.1)
-    pyautogui.click()
+    
+    menu_location = pyautogui.locateOnScreen('menu.png')
+    pyautogui.click(menu_location)
 
-    pyautogui.moveTo(open_menu_x, open_menu_y, duration=0.1)
-    pyautogui.click()
+    open_preset_location = pyautogui.locateOnScreen('external_preset.png')
+    pyautogui.click(open_preset_location)
 
-    pyautogui.moveTo(1777, 50, duration=0.1)
-    pyautogui.click()
+    # pyautogui.moveTo(1777, 50, duration=0.1)
+    # pyautogui.click()
 
     that_file_path_list = that_file_path.split("/")
  
@@ -69,11 +70,11 @@ def open_preset_play(that_folder_path):
             file_menu_x, file_menu_y = 901, 94
             open_menu_x, open_menu_y = 901, 154
             ## open preset file
-            pyautogui.moveTo(file_menu_x, file_menu_y, duration=0.1)
-            pyautogui.click()
+            menu_location = pyautogui.locateOnScreen('menu.png')
+            pyautogui.click(menu_location)
 
-            pyautogui.moveTo(open_menu_x, open_menu_y, duration=0.1)
-            pyautogui.click()
+            open_preset_location = pyautogui.locateOnScreen('external_preset.png')
+            pyautogui.click(open_preset_location)
         
 
 
@@ -82,8 +83,8 @@ def open_preset_play(that_folder_path):
 
 def close_vital():
     close_vital_x, close_vital_y = 1189, 56
-    pyautogui.moveTo(close_vital_x, close_vital_y, duration=0.1)
-    pyautogui.click()
+    close_location = pyautogui.locateOnScreen('exit_vital.png')
+    pyautogui.click(close_location)
 
 
 if __name__ == '__main__':
