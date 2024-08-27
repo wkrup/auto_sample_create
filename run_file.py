@@ -92,9 +92,10 @@ if __name__ == '__main__':
     if not os.path.exists(audio_save_folder):
         os.makedirs(audio_save_folder)
 
-    os.system("cd " + folder_path_rel)
-    os.system('unzip -j ' + vital_zip)
-    os.system("cd ..")
+  
+
+    os.system('unzip -j ' + folder_path_rel + "/" + vital_zip + " -d " + folder_path_rel)
+    os.system('rm ' + folder_path_rel + "/" + vital_zip)
     open_vital()
     preset_move(folder_path)
     open_preset_play(folder_path_rel)
