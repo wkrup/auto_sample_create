@@ -9,9 +9,9 @@ folder_path_rel = 'vital_files' #zip file name without zip #fixed
 audio_save_folder = 'sample_audio'
 
 
-def play_note(note_key):
+def play_note(note_key, note_time):
     with pyautogui.hold(note_key):
-        time.sleep(0.15)
+        time.sleep(note_time)
 
 def open_vital():
     pyautogui.hotkey('alt', 'f2')  # 'super' key often corresponds to the Windows key or Command key
@@ -61,7 +61,7 @@ def open_preset_play(that_folder_path):
 
         note_list = ['a','s','d', 'f', 'g', 'h', 'j', 'k']
         for j in note_list:
-            play_note(j)
+            play_note(j, 0.15)
 
         stop_recording(record_process)
         
