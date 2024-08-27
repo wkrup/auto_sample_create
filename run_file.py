@@ -100,7 +100,7 @@ if __name__ == '__main__':
     preset_move(folder_path)
     open_preset_play(folder_path_rel)
     close_vital()
-    os.system("rm -r " + folder_path_rel)
+    os.system("rm -r " + folder_path_rel + "/*")
     os.system("zip -r sample_audio.zip sample_audio/")
     os.system("rm -rf sample_audio/*")
 
