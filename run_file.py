@@ -88,6 +88,10 @@ def close_vital():
 
 if __name__ == '__main__':
     vital_zip = os.listdir(folder_path_rel)[0]
+
+    if not os.path.exists(audio_save_folder):
+        os.makedirs(audio_save_folder)
+
     os.system('unzip -j ' + folder_path_rel + "/" + vital_zip +" -d " + folder_path_rel)
     open_vital()
     preset_move(folder_path)
