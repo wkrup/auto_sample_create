@@ -162,4 +162,4 @@ cython_debug/
 #.idea/
 
 Pluck_CTGAN_synthesizer/
-run_file.ipynb
+.run_file.ipynb
