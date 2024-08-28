@@ -36,7 +36,6 @@ def preset_move(that_file_path):
     pyautogui.moveTo(open_menu_x, open_menu_y, duration=0.1)
     pyautogui.click()
 
-'''
     that_file_path_list = that_file_path.split("/")
  
 
@@ -45,7 +44,7 @@ def preset_move(that_file_path):
         time.sleep(0.5)
         pyautogui.press('enter')
         time.sleep(0.5)
-'''    
+
 def open_preset_play(that_folder_path):
     preset_list = os.listdir(that_folder_path)
 
