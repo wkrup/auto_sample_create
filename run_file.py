@@ -11,9 +11,9 @@ audio_save_folder = 'sample_audio'
 
 screen_x, screen_y = pyautogui.size()
 
-file_menu_x, file_menu_y = int(screen_x*901/1364), int(screen_y*94/768)
-open_menu_x, open_menu_y = int(screen_x*901/1364), int(screen_y*154/768)
-close_vital_x, close_vital_y = int(screen_x*1189/1364), int(screen_y*56/768)
+file_menu_x, file_menu_y = 1707, 233
+open_menu_x, open_menu_y = 1707, 343
+close_vital_x, close_vital_y = 2297, 188
 
 
 def play_note(note_key, note_time):
