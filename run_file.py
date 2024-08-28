@@ -13,7 +13,7 @@ screen_x, screen_y = pyautogui.size()
 
 file_menu_x, file_menu_y = 1707, 233
 open_menu_x, open_menu_y = 1707, 343
-home_menu_x, home_menu_y = 803, 404
+home_menu_x, home_menu_y = 793, 450
 close_vital_x, close_vital_y = 2297, 188
 
 
