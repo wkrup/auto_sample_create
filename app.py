@@ -33,7 +33,7 @@ async def upload_preset(request: Request):
 
     run_file.open_vital()
     run_file.preset_move(folder_path_rel)
-'''
+
     run_file.open_preset_play(folder_path_rel)
     run_file.close_vital()
 
@@ -49,4 +49,3 @@ async def upload_preset(request: Request):
 
     return response
     
-'''

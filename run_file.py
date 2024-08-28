@@ -8,6 +8,12 @@ folder_path = "auto_sample_create/vital_files" #change path
 folder_path_rel = 'vital_files' #zip file name without zip #fixed
 audio_save_folder = 'sample_audio'
 
+screen_x, screen_y = pyautogui.size()
+
+file_menu_x, file_menu_y = int(screen_x*901/1364), int(screen_y*94/768)
+open_menu_x, open_menu_y = int(screen_x*901/1364), int(screen_y*154/768)
+close_vital_x, close_vital_y = int(screen_x*1189/1364), int(screen_y*56/768)
+
 
 def play_note(note_key, note_time):
     with pyautogui.hold(note_key):
@@ -23,8 +29,6 @@ def open_vital():
     time.sleep(2)
 
 def preset_move(that_file_path):
-    file_menu_x, file_menu_y = 901, 94
-    open_menu_x, open_menu_y = 901, 154
     ## open preset file
     pyautogui.moveTo(file_menu_x, file_menu_y, duration=0.1)
     pyautogui.click()
@@ -32,8 +36,6 @@ def preset_move(that_file_path):
     pyautogui.moveTo(open_menu_x, open_menu_y, duration=0.1)
     pyautogui.click()
 
-    pyautogui.moveTo(1777, 50, duration=0.1)
-    pyautogui.click()
 '''
     that_file_path_list = that_file_path.split("/")
  
@@ -66,8 +68,6 @@ def open_preset_play(that_folder_path):
         stop_recording(record_process)
         
         if i != len(preset_list)-1:
-            file_menu_x, file_menu_y = 901, 94
-            open_menu_x, open_menu_y = 901, 154
             ## open preset file
             pyautogui.moveTo(file_menu_x, file_menu_y, duration=0.1)
             pyautogui.click()
@@ -81,7 +81,6 @@ def open_preset_play(that_folder_path):
 
 
 def close_vital():
-    close_vital_x, close_vital_y = 1189, 56
     pyautogui.moveTo(close_vital_x, close_vital_y, duration=0.1)
     pyautogui.click()
 
