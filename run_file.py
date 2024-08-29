@@ -24,7 +24,7 @@ def play_note(note_key, note_time):
 
 def open_vital():
     pyautogui.hotkey('alt', 'f2')  # 'super' key often corresponds to the Windows key or Command key
-    time.sleep(5)
+    time.sleep(2)
     pyautogui.write('Vital')  # Replace with the application you want to open
     # Press Enter to launch the application
     pyautogui.press('enter')
