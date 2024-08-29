@@ -73,6 +73,7 @@ def open_preset_play(that_folder_path):
         for j in note_list:
             play_note(j, 0.15)
 
+        time.sleep(2)
         stop_recording(record_process)
         
         if i != len(preset_list)-1:
