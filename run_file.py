@@ -34,14 +34,18 @@ def open_vital():
 def preset_move(that_file_path):
 
     ## open preset file
-    pyautogui.moveTo(file_menu_x, file_menu_y, duration=1)
-    pyautogui.click()
+    # pyautogui.moveTo(file_menu_x, file_menu_y, duration=1)
+    pyautogui.click(file_menu_x, file_menu_y)
+    time.sleep(0.5)
 
-    pyautogui.moveTo(open_menu_x, open_menu_y, duration=1)
-    pyautogui.click()
+    # pyautogui.moveTo(open_menu_x, open_menu_y, duration=1)
+    pyautogui.click(open_menu_x, open_menu_y)
+    time.sleep(0.5)
 
-    pyautogui.moveTo(home_menu_x, home_menu_y, duration=1)
-    pyautogui.click()
+    # pyautogui.moveTo(home_menu_x, home_menu_y, duration=1)
+    pyautogui.click(home_menu_x, home_menu_y)
+    time.sleep(0.5)
+
 
 
     that_file_path_list = that_file_path.split("/")
@@ -76,11 +80,13 @@ def open_preset_play(that_folder_path):
         
         if i != len(preset_list)-1:
             ## open preset file
-            pyautogui.moveTo(file_menu_x, file_menu_y, duration=1)
-            pyautogui.click()
+            # pyautogui.moveTo(file_menu_x, file_menu_y, duration=1)
+            pyautogui.click(file_menu_x, file_menu_y)
+            time.sleep(0.5)
 
-            pyautogui.moveTo(open_menu_x, open_menu_y, duration=1)
-            pyautogui.click()
+            # pyautogui.moveTo(open_menu_x, open_menu_y, duration=1)
+            pyautogui.click(open_menu_x, open_menu_y)
+            time.sleep(0.5)
         
 
 
@@ -89,8 +95,8 @@ def open_preset_play(that_folder_path):
 
 def close_vital():
 
-    pyautogui.moveTo(close_vital_x, close_vital_y, duration=0.1)
-    pyautogui.click()
+    # pyautogui.moveTo(close_vital_x, close_vital_y, duration=0.1)
+    pyautogui.click(close_vital_x, close_vital_y)
 
 
 if __name__ == '__main__':
