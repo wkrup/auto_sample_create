@@ -11,10 +11,11 @@ audio_save_folder = 'sample_audio'
 
 screen_x, screen_y = pyautogui.size()
 
-file_menu_x, file_menu_y = 1707, 233
-open_menu_x, open_menu_y = 1707, 343
-home_menu_x, home_menu_y = 793, 450
-close_vital_x, close_vital_y = 2297, 188
+
+file_menu_x, file_menu_y = (screen_x*1266/1920), (screen_y*141/1080)
+open_menu_x, open_menu_y = (screen_x*1266/1920), (screen_y*204/1080)
+home_menu_x, home_menu_y = (screen_x*500/1920), (screen_y*187/1080)
+close_vital_x, close_vital_y = (screen_x*1689/1920), (screen_y*90/1080)
 
 
 
