@@ -74,7 +74,7 @@ def open_preset_play(that_folder_path):
 
         note_list = ['a','s','d', 'f', 'g', 'h', 'j', 'k']
         for j in note_list:
-            play_note(j, 0.15)
+            play_note(j, 0.5)
 
         time.sleep(2)
         stop_recording(record_process)
